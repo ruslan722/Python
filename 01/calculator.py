@@ -1,4 +1,4 @@
-
+# Простой калькулятор
 import math
 
 class Calculator:
@@ -20,10 +20,7 @@ class Calculator:
 
     # Метод деления – принимает два числа и возвращает результат деления
     def divide(self, x1, x2):
-        if x2 != 0:
-            return x1 / x2
-        else:
-            raise ValueError("Деление на ноль невозможно")
+        return x1 / x2
 
     # Метод возведения в степень – принимает число и степень
     def power(self, base, exp):
@@ -31,17 +28,11 @@ class Calculator:
 
     # Метод вычисления остатка от деления
     def modulus(self, x1, x2):
-        if x2 != 0:
-            return x1 % x2
-        else:
-            raise ValueError("Деление на ноль невозможно")
+        return x1 % x2
 
     # Метод извлечения квадратного корня
     def sqrt(self, x):
-        if x >= 0:
-            return math.sqrt(x)
-        else:
-            raise ValueError("Невозможно извлечь квадратный корень из отрицательного числа")
+        return math.sqrt(x)
 
     # Метод вычисления процента от числа
     def percent(self, number, percent):
@@ -49,15 +40,15 @@ class Calculator:
 
     # Метод факториала числа
     def factorial(self, n):
-        if n < 0:
-            raise ValueError("Факториал определён только для неотрицательных чисел")
         return math.factorial(n)
 
-   
-    def minimax_choice(self, payoff_matrix):
-        
+    # Метод выбора оптимальной стратегии по принципу максимакса (оптимистичный сценарий)
+    def maximax_choice(self, payoff_matrix):
+        # для каждой стратегии берём её лучший исход (максимум)
         row_max = [max(row) for row in payoff_matrix]
-        
+        # игрок выбирает стратегию, у которой лучший исход максимален
         best_value = max(row_max)
         best_index = row_max.index(best_value)
-        return best_index, best_value
+        return best_index, int(best_value)
+
+
