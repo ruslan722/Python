@@ -57,7 +57,7 @@ class Calculator:
     def minimax_choice(self, payoff_matrix):
         
         row_max = [max(row) for row in payoff_matrix]
-        # игрок выбирает стратегию, у которой худший исход максимален
+        
         best_value = max(row_max)
         best_index = row_max.index(best_value)
         return best_index, best_value
