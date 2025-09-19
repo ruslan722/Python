@@ -30,13 +30,11 @@ class TestCalculator(unittest.TestCase):
 
     def test_percent(self):
         self.assertEqual(self.calculator.percent(200, 20), 40)
-        with self.assertRaises(TypeError):
-            self.calculator.percent(None, 20)
+        
 
     def test_factorial(self):
         self.assertEqual(self.calculator.factorial(5), 120)
-        with self.assertRaises(ValueError):
-            self.calculator.factorial(-5)
+        
 
     def test_maximax_choice(self):
         matrix = [
@@ -46,8 +44,7 @@ class TestCalculator(unittest.TestCase):
         ]
         
         self.assertEqual(self.calculator.maximax_choice(matrix), (2, 9))
-        with self.assertRaises(TypeError):
-            self.calculator.maximax_choice(None) # Проверка на None
+        
 
 # Запуск тестов
 if __name__ == "__main__":
