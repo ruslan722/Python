@@ -1,0 +1,4 @@
+peewee
+mysql
+mysql-connector
+mysqlclient
