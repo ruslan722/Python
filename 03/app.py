@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import Label, PhotoImage, Button, Entry, messagebox
 from datetime import datetime
-from connect import TrafficLight as TrafficLightModel   
+from connect import TrafficLight as TrafficLightModel
 
 # === Создаём окно приложения ===
 root = tk.Tk()
@@ -167,4 +167,3 @@ class TrafficLight:
 if __name__ == "__main__":
     app = TrafficLight(root)
     root.mainloop()
-
