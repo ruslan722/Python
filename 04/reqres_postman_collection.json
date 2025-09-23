@@ -1,0 +1,184 @@
+{
+  "info": {
+    "name": "ReqRes API Full",
+    "description": "Полная коллекция запросов ReqRes.in для тестирования",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Users",
+      "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/users?page=1"
+      }
+    },
+    {
+      "name": "Single User",
+      "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/users/2"
+      }
+    },
+    {
+      "name": "Single User Not Found",
+      "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/users/23"
+      }
+    },
+    {
+      "name": "List Resource",
+      "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/unknown"
+      }
+    },
+    {
+      "name": "Single Resource",
+      "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/unknown/2"
+      }
+    },
+    {
+      "name": "Single Resource Not Found",
+      "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/unknown/23"
+      }
+    },
+    {
+      "name": "Create User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"morpheus\",\n  \"job\": \"leader\"\n}"
+        },
+        "url": "https://reqres.in/api/users"
+      }
+    },
+    {
+      "name": "Update User (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"morpheus\",\n  \"job\": \"zion resident\"\n}"
+        },
+        "url": "https://reqres.in/api/users/2"
+      }
+    },
+    {
+      "name": "Update User (PATCH)",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"job\": \"zion resident\"\n}"
+        },
+        "url": "https://reqres.in/api/users/2"
+      }
+    },
+    {
+      "name": "Delete User",
+      "request": {
+        "method": "DELETE",
+        "url": "https://reqres.in/api/users/2"
+      }
+    },
+    {
+      "name": "Register - Successful",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"[email protected]\",\n  \"password\": \"pistol\"\n}"
+        },
+        "url": "https://reqres.in/api/register"
+      }
+    },
+    {
+      "name": "Register - Unsuccessful",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"[email protected]\"\n}"
+        },
+        "url": "https://reqres.in/api/register"
+      }
+    },
+    {
+      "name": "Login - Successful",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"[email protected]\",\n  \"password\": \"cityslicka\"\n}"
+        },
+        "url": "https://reqres.in/api/login"
+      }
+    },
+    {
+      "name": "Login - Unsuccessful",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"[email protected]\"\n}"
+        },
+        "url": "https://reqres.in/api/login"
+      }
+    },
+    {
+      "name": "Delayed Response",
+      "request": {
+        "method": "GET",
+        "url": "https://reqres.in/api/users?delay=3"
+      }
+    }
+  ]
+}
