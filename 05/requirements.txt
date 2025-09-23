@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+Peewee
+mysql
+mysql-connector
+mysqlclient
