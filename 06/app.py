@@ -30,3 +30,9 @@ def delete_course():
     print("DELETE /course/1")
     print("Статус:", r.status_code)
     print("Ответ:", r.json(), "\n")
+
+get_courses()
+get_course()
+create_course()
+update_course()
+delete_course()
