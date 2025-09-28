@@ -24,6 +24,7 @@ class Course(BaseModel):
 
 
 db.connect()
-db.create_tables([Course])
+db.create_tables([Course], safe=True)
+
 db.close()
 
