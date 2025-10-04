@@ -1,0 +1,89 @@
+{
+  "info": {
+    "name": "Motivation API",
+    "description": "Коллекция для тестирования FastAPI приложения Motivation API.\nСодержит запросы для получения опросов, цитат и анализа состояния пользователя.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "📋 Get All Surveys",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/survey/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "survey",
+            ""
+          ]
+        },
+        "description": "Возвращает список всех опросов в базе.\n\nПример ответа:\n{\n  \"surveys\": [\n    {\"id\": 1, \"user_id\": 5, \"score\": 8},\n    {\"id\": 2, \"user_id\": 3, \"score\": 6}\n  ]\n}"
+      }
+    },
+    {
+      "name": "💬 Get Quotes by Mood Tag",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/quotes/happy",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "quotes",
+            "happy"
+          ]
+        },
+        "description": "Возвращает список цитат по тегу настроения (`happy`, `neutral`, `sad`).\n\nПример ответа:\n{\n  \"quotes\": [\"Делай добро, и оно вернется.\", \"Улыбнись миру!\"]\n}"
+      }
+    },
+    {
+      "name": "🧠 Get User State",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/state/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "state",
+            "1"
+          ]
+        },
+        "description": "Определяет эмоциональное состояние пользователя по результатам опросов.\n\nВозвращает одно из состояний: `positive`, `neutral`, `negative`.\n\nПример ответа:\n{\n  \"user_id\": 1,\n  \"average_score\": 6.5,\n  \"state\": \"neutral\"\n}"
+      }
+    },
+    {
+      "name": "🌟 Get Motivation for User",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/motivation/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "motivation",
+            "1"
+          ]
+        },
+        "description": "Возвращает состояние пользователя и подходящие мотивационные цитаты.\n\nПример ответа:\n{\n  \"user_id\": 1,\n  \"average_score\": 8.3,\n  \"state\": \"positive\",\n  \"quotes\": [\"Ты можешь всё!\", \"Продолжай в том же духе!\"]\n}"
+      }
+    }
+  ]
+}
