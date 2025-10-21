@@ -1,0 +1,163 @@
+{
+  "info": {
+    "name": "Motivation API",
+    "_postman_id": "8d6f6b7a-b6b7-4e72-93f9-2a0ff4d7b5d1",
+    "description": "Коллекция для тестирования Motivation API (Surveys и Quotes)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Survey",
+      "item": [
+        {
+          "name": "Get All Surveys",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/survey/"
+          }
+        },
+        {
+          "name": "Get Survey by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/survey/1"
+          }
+        },
+        {
+          "name": "Create Survey",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"user_id\": 1,\n  \"question\": \"Как вы себя чувствуете сегодня?\",\n  \"score\": 8\n}"
+            },
+            "url": "{{base_url}}/survey/"
+          }
+        },
+        {
+          "name": "Update Survey",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"question\": \"Как настроение?\",\n  \"score\": 6\n}"
+            },
+            "url": "{{base_url}}/survey/1"
+          }
+        },
+        {
+          "name": "Delete Survey",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/survey/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Quotes",
+      "item": [
+        {
+          "name": "Get All Quotes",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/quotes/"
+          }
+        },
+        {
+          "name": "Get Quotes by Mood Tag",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/quotes/happy"
+          }
+        },
+        {
+          "name": "Create Quote",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Каждый день — это шанс стать лучше!\",\n  \"mood_tag\": \"happy\"\n}"
+            },
+            "url": "{{base_url}}/quotes/"
+          }
+        },
+        {
+          "name": "Update Quote",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Не сдавайся, даже если тяжело.\",\n  \"mood_tag\": \"neutral\"\n}"
+            },
+            "url": "{{base_url}}/quotes/1"
+          }
+        },
+        {
+          "name": "Delete Quote",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": "{{base_url}}/quotes/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Extra",
+      "item": [
+        {
+          "name": "Get User State",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/state/1"
+          }
+        },
+        {
+          "name": "Get Motivation for User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{base_url}}/motivation/1"
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}

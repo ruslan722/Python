@@ -5,3 +5,4 @@ mysql
 mysql-connector
 mysqlclient
 requests
+httpx
